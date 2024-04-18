@@ -1,28 +1,4 @@
-import { App, ButtonComponent, Modal, Setting, TextAreaComponent, TextComponent } from "obsidian";
-
-const template: string =
-	`<div>
-		<label for="commit">Comment message</label>
-		<textarea id="commit" placeholder="Enter your commit" rows="8"></textarea>
-	</div>
-	
-	<style>
-		/*div {*/
-		/*	width: 100%;*/
-		/*}*/
-		
-		/*textarea {*/
-		/*	width: 100%;*/
-		/*	resize: none;*/
-		/*}*/
-		
-		/*label {*/
-		/*	display: block;*/
-		/*	margin: 4px 0;*/
-		/*	padding-top: 4px;*/
-		/*	border-top: 1px solid;*/
-		/*}*/
-	</style>`;
+import { App, ButtonComponent, Modal, Setting, TextAreaComponent } from "obsidian";
 
 export class BackupModal extends Modal {
 	constructor(app: App) {
@@ -31,7 +7,6 @@ export class BackupModal extends Modal {
 
 	onOpen() {
 		const {contentEl} = this;
-		// contentEl.setCssStyles({fontWeight: 'bold'});
 		contentEl.setText('GitHub backup');
 
 		this.addCommitInput(contentEl);
@@ -44,11 +19,6 @@ export class BackupModal extends Modal {
 	}
 
 	private addCommitInput(contentEl: HTMLElement): void {
-		// const node: DocumentFragment = new DocumentFragment();
-		// const nodeHtml: HTMLDivElement = document.createElement("div");
-		// nodeHtml.innerHTML = template;
-		// node.append(nodeHtml);
-		// contentEl.append(node);
 		new Setting(contentEl)
 			.setClass('backup-modal-textarea')
 			.setName('Commit message')
@@ -62,6 +32,8 @@ export class BackupModal extends Modal {
 	}
 
 	private addBtn(contentEl: HTMLElement): void {
-		new Setting(contentEl).setClass('backup-modal-btn').addButton((btn: ButtonComponent) => btn.setButtonText('Do backup'))
+		new Setting(contentEl)
+			.setClass('backup-modal-btn')
+			.addButton((btn: ButtonComponent) => btn.setButtonText('Do backup'))
 	}
 }
