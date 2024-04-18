@@ -1,0 +1,11 @@
+{
+	"id": "github-backup",
+	"name": "GitHub Backup",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Backup data to GitHub repository",
+	"author": "Gido Kristoffel",
+	"authorUrl": "https://github.com/GidoKristoffel",
+	"fundingUrl": "",
+	"isDesktopOnly": true
+}

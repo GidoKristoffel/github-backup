@@ -1,0 +1,24 @@
+/*
+
+This CSS file will be included with your plugin, and
+available in the app when your plugin is enabled.
+
+If your plugin does not need CSS, delete this file.
+
+*/
+
+.backup-modal-textarea {
+	display: flex;
+	gap: 8px;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 8px;
+}
+
+.backup-modal-textarea>div, .backup-modal-textarea textarea {
+	width: 100%;
+}
+
+.backup-modal-btn {
+	padding-bottom: 0;
+}
